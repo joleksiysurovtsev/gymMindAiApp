@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "24687499857",
+    "project_id": "gym-mind-ai",
+    "storage_bucket": "gym-mind-ai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24687499857:android:f4c521ea7ad5df55e2b670",
+        "android_client_info": {
+          "package_name": "dev.surovtsev.gymmind"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24687499857-l2s21ek42nb5269h4fsgboe4qfittn29.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.surovtsev.gymmind",
+            "certificate_hash": "3cfb0bfa0c6ff1d3fc94cee9580f350daa2cdedc"
+          }
+        },
+        {
+          "client_id": "24687499857-q18an5672sf19omd1urlrabmjer3v7il.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAIJZwfSZgij40ObZTvUDD-cjoxpUwNj8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24687499857-q18an5672sf19omd1urlrabmjer3v7il.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
