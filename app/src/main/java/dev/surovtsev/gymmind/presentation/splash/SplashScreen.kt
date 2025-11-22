@@ -6,10 +6,14 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.PersonOutline
+import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -31,7 +35,11 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import dev.surovtsev.gymmind.R
 import dev.surovtsev.gymmind.core.navigation.Routes
-import dev.surovtsev.gymmind.core.theme.*
+import dev.surovtsev.gymmind.core.theme.Accent
+import dev.surovtsev.gymmind.core.theme.Error
+import dev.surovtsev.gymmind.core.theme.Primary
+import dev.surovtsev.gymmind.core.theme.PrimaryBright
+import dev.surovtsev.gymmind.core.theme.TextSecondary
 import dev.surovtsev.gymmind.presentation.components.AnimatedNeonBackground
 import dev.surovtsev.gymmind.presentation.components.GymMindButton
 
@@ -219,30 +227,157 @@ fun SplashContent(
                         )
                     }
                     is SplashUiState.NotAuthenticated -> {
-                        Column(
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.spacedBy(12.dp)
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(12.dp)
                         ) {
-                            GymMindButton(
-                                text = "Sign in with Google",
+                            // Sign in with Google - Glass morphism style
+                            Surface(
                                 onClick = onSignInClick,
-                                modifier = Modifier.fillMaxWidth()
-                            )
-
-                            OutlinedButton(
-                                onClick = onGuestClick,
-                                modifier = Modifier.fillMaxWidth(),
-                                shape = MaterialTheme.shapes.medium,
-                                border = BorderStroke(1.dp, Primary),
-                                colors = ButtonDefaults.outlinedButtonColors(
-                                    contentColor = Primary
-                                )
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .height(64.dp),
+                                shape = MaterialTheme.shapes.large,
+                                color = Color.Transparent,
+                                border = BorderStroke(
+                                    width = 2.dp,
+                                    brush = Brush.linearGradient(
+                                        colors = listOf(
+                                            Color.White.copy(alpha = 0.4f),
+                                            Color.White.copy(alpha = 0.2f)
+                                        )
+                                    )
+                                ),
+                                shadowElevation = 8.dp
                             ) {
-                                Text(
-                                    text = "Continue as Guest",
-                                    style = MaterialTheme.typography.labelLarge,
-                                    modifier = Modifier.padding(vertical = 8.dp)
-                                )
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .background(
+                                            brush = Brush.linearGradient(
+                                                colors = listOf(
+                                                    Color.White.copy(alpha = 0.15f),
+                                                    Color.White.copy(alpha = 0.08f)
+                                                ),
+                                                start = Offset(0f, 0f),
+                                                end = Offset(1000f, 1000f)
+                                            )
+                                        )
+                                        .background(
+                                            brush = Brush.radialGradient(
+                                                colors = listOf(
+                                                    Primary.copy(alpha = 0.12f),
+                                                    Color.Transparent
+                                                ),
+                                                center = Offset(0f, 0f),
+                                                radius = 400f
+                                            )
+                                        ),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Row(
+                                        horizontalArrangement = Arrangement.Center,
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        modifier = Modifier.padding(horizontal = 8.dp)
+                                    ) {
+                                        // Google Icon (custom)
+                                        Box(
+                                            modifier = Modifier
+                                                .size(28.dp)
+                                                .background(
+                                                    Color.White,
+                                                    shape = androidx.compose.foundation.shape.CircleShape
+                                                ),
+                                            contentAlignment = Alignment.Center
+                                        ) {
+                                            Text(
+                                                text = "G",
+                                                style = MaterialTheme.typography.titleMedium,
+                                                fontWeight = FontWeight.Bold,
+                                                color = Color(0xFF4285F4) // Google blue
+                                            )
+                                        }
+
+                                        Spacer(modifier = Modifier.width(8.dp))
+
+                                        Text(
+                                            text = "Sign In",
+                                            style = MaterialTheme.typography.titleSmall,
+                                            fontWeight = FontWeight.Bold,
+                                            color = Color.White,
+                                            letterSpacing = 0.5.sp
+                                        )
+                                    }
+                                }
+                            }
+
+                            // Continue as Guest - Glass morphism style
+                            Surface(
+                                onClick = onGuestClick,
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .height(64.dp),
+                                shape = MaterialTheme.shapes.large,
+                                color = Color.Transparent,
+                                border = BorderStroke(
+                                    width = 2.dp,
+                                    brush = Brush.linearGradient(
+                                        colors = listOf(
+                                            Color.White.copy(alpha = 0.4f),
+                                            Color.White.copy(alpha = 0.2f)
+                                        )
+                                    )
+                                ),
+                                shadowElevation = 8.dp
+                            ) {
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .background(
+                                            brush = Brush.linearGradient(
+                                                colors = listOf(
+                                                    Color.White.copy(alpha = 0.15f),
+                                                    Color.White.copy(alpha = 0.08f)
+                                                ),
+                                                start = Offset(0f, 0f),
+                                                end = Offset(1000f, 1000f)
+                                            )
+                                        )
+                                        .background(
+                                            brush = Brush.radialGradient(
+                                                colors = listOf(
+                                                    Accent.copy(alpha = 0.12f),
+                                                    Color.Transparent
+                                                ),
+                                                center = Offset(200f, 200f),
+                                                radius = 400f
+                                            )
+                                        ),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Row(
+                                        horizontalArrangement = Arrangement.Center,
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        modifier = Modifier.padding(horizontal = 8.dp)
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.PersonOutline,
+                                            contentDescription = "Guest",
+                                            modifier = Modifier.size(28.dp),
+                                            tint = Color.White.copy(alpha = 0.9f)
+                                        )
+
+                                        Spacer(modifier = Modifier.width(8.dp))
+
+                                        Text(
+                                            text = "Guest",
+                                            style = MaterialTheme.typography.titleSmall,
+                                            fontWeight = FontWeight.Bold,
+                                            color = Color.White,
+                                            letterSpacing = 0.5.sp
+                                        )
+                                    }
+                                }
                             }
                         }
                     }
