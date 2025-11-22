@@ -1,5 +1,6 @@
 package dev.surovtsev.gymmind.data.repository
 
+import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
@@ -34,7 +35,8 @@ class AuthRepositoryImpl @Inject constructor(
 
             val profile = if (userDoc.exists()) {
                 // Existing user - load from Firestore
-                userDoc.toObject(UserProfile::class.java)?.copy(id = user.uid)
+                Log.d("AuthRepository", "Existing user found in Firestore")
+                val existingProfile = userDoc.toObject(UserProfile::class.java)?.copy(id = user.uid)
                     ?: UserProfile(
                         id = user.uid,
                         email = user.email ?: "",
@@ -42,8 +44,11 @@ class AuthRepositoryImpl @Inject constructor(
                         photoUrl = user.photoUrl?.toString(),
                         hasCompletedOnboarding = false
                     )
+                Log.d("AuthRepository", "Existing profile: hasCompletedOnboarding=${existingProfile.hasCompletedOnboarding}")
+                existingProfile
             } else {
                 // New user - create profile
+                Log.d("AuthRepository", "New user - creating profile")
                 val newProfile = UserProfile(
                     id = user.uid,
                     email = user.email ?: "",
@@ -59,10 +64,12 @@ class AuthRepositoryImpl @Inject constructor(
                     .set(newProfile)
                     .await()
 
+                Log.d("AuthRepository", "New profile saved: hasCompletedOnboarding=${newProfile.hasCompletedOnboarding}")
                 newProfile
             }
 
             // Save login state to DataStore
+            Log.d("AuthRepository", "Saving to DataStore: isLoggedIn=true, hasCompletedOnboarding=${profile.hasCompletedOnboarding}")
             userPreferences.setLoggedIn(true, user.uid)
             userPreferences.setOnboardingCompleted(profile.hasCompletedOnboarding)
 

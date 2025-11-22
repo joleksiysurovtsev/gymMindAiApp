@@ -18,6 +18,7 @@ class UserPreferences @Inject constructor(
         private val IS_LOGGED_IN = booleanPreferencesKey("is_logged_in")
         private val USER_ID = stringPreferencesKey("user_id")
         private val HAS_COMPLETED_ONBOARDING = booleanPreferencesKey("has_completed_onboarding")
+        private val ONBOARDING_PROGRESS = stringPreferencesKey("onboarding_progress")
     }
 
     val isLoggedIn: Flow<Boolean> = dataStore.data.map { it[IS_LOGGED_IN] ?: false }
@@ -36,6 +37,22 @@ class UserPreferences @Inject constructor(
     suspend fun setOnboardingCompleted(completed: Boolean) {
         dataStore.edit { preferences ->
             preferences[HAS_COMPLETED_ONBOARDING] = completed
+        }
+    }
+
+    suspend fun setOnboardingProgress(progressJson: String) {
+        dataStore.edit { preferences ->
+            preferences[ONBOARDING_PROGRESS] = progressJson
+        }
+    }
+
+    fun getOnboardingProgress(): Flow<String?> {
+        return dataStore.data.map { it[ONBOARDING_PROGRESS] }
+    }
+
+    suspend fun clearOnboardingProgress() {
+        dataStore.edit { preferences ->
+            preferences.remove(ONBOARDING_PROGRESS)
         }
     }
 

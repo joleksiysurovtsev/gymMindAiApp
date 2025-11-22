@@ -1,0 +1,136 @@
+<resources>
+    <string name="app_name">gymmind</string>
+
+    <!-- Common -->
+    <string name="continue_button">Продолжить</string>
+    <string name="back">Назад</string>
+    <string name="skip">Пропустить</string>
+    <string name="onboarding_title">Настройка профиля</string>
+
+    <!-- Card 1: Basic Info -->
+    <string name="basic_info_title">Давайте познакомимся</string>
+    <string name="basic_info_subtitle">Это помогает создать персонализированную программу тренировок</string>
+    <string name="gender_label">Пол</string>
+    <string name="gender_male">Мужской</string>
+    <string name="gender_female">Женский</string>
+    <string name="gender_other">Другой</string>
+    <string name="gender_prefer_not_to_say">Предпочитаю не указывать</string>
+    <string name="age_label">Возраст</string>
+    <string name="age_hint">Введите ваш возраст</string>
+    <string name="height_label">Рост (см)</string>
+    <string name="height_hint">Введите ваш рост</string>
+    <string name="weight_label">Текущий вес (кг)</string>
+    <string name="weight_hint">Введите ваш вес</string>
+    <string name="validation_age_required">Пожалуйста, укажите ваш возраст</string>
+    <string name="validation_age_invalid">Возраст должен быть между 13 и 120</string>
+    <string name="validation_height_required">Пожалуйста, укажите ваш рост</string>
+    <string name="validation_height_invalid">Рост должен быть между 100 и 250 см</string>
+    <string name="validation_weight_required">Пожалуйста, укажите ваш вес</string>
+    <string name="validation_weight_invalid">Вес должен быть между 30 и 300 кг</string>
+
+    <!-- Card 2: Goal -->
+    <string name="goal_title">Какая ваша главная цель?</string>
+    <string name="goal_subtitle">Выберите, чего хотите достичь</string>
+    <string name="goal_lose_weight">Похудеть</string>
+    <string name="goal_lose_weight_desc">Снизить процент жира</string>
+    <string name="goal_gain_muscle">Набрать мышечную массу</string>
+    <string name="goal_gain_muscle_desc">Увеличить силу и объем мышц</string>
+    <string name="goal_improve_flexibility">Улучшить гибкость</string>
+    <string name="goal_improve_flexibility_desc">Растяжка и мобильность</string>
+    <string name="goal_improve_endurance">Повысить выносливость</string>
+    <string name="goal_improve_endurance_desc">Улучшить кардио</string>
+    <string name="goal_maintain_fitness">Поддерживать форму</string>
+    <string name="goal_maintain_fitness_desc">Оставаться в хорошей форме</string>
+
+    <!-- Card 3: Target Weight -->
+    <string name="target_weight_title">Какой ваш целевой вес?</string>
+    <string name="target_weight_subtitle">Поставьте реалистичную цель</string>
+    <string name="target_weight_label">Целевой вес (кг)</string>
+    <string name="target_weight_current">Текущий: %.1f кг</string>
+    <string name="target_weight_difference">Разница: %+.1f кг</string>
+
+    <!-- Card 4: Experience -->
+    <string name="experience_title">Какой ваш уровень подготовки?</string>
+    <string name="experience_subtitle">Это помогает настроить сложность</string>
+    <string name="experience_beginner">Новичок</string>
+    <string name="experience_beginner_desc">Только начинаю</string>
+    <string name="experience_intermediate">Средний</string>
+    <string name="experience_intermediate_desc">Есть опыт тренировок</string>
+    <string name="experience_advanced">Продвинутый</string>
+    <string name="experience_advanced_desc">Опытный спортсмен</string>
+
+    <!-- Card 5: Location -->
+    <string name="location_title">Где вы будете тренироваться?</string>
+    <string name="location_subtitle">Это влияет на доступные упражнения</string>
+    <string name="location_home_no_equipment">Дома (без оборудования)</string>
+    <string name="location_home_no_equipment_desc">Только упражнения с собственным весом</string>
+    <string name="location_home_with_equipment">Дома (с оборудованием)</string>
+    <string name="location_home_with_equipment_desc">Гантели, резинки и т.д.</string>
+    <string name="location_gym">В зале</string>
+    <string name="location_gym_desc">Полный доступ к оборудованию</string>
+    <string name="location_outdoor">На улице</string>
+    <string name="location_outdoor_desc">Парки, площадки</string>
+
+    <!-- Card 6: Equipment -->
+    <string name="equipment_title">Какое оборудование у вас есть?</string>
+    <string name="equipment_subtitle">Выберите все подходящие варианты</string>
+    <string name="equipment_dumbbells">Гантели</string>
+    <string name="equipment_barbell">Штанга</string>
+    <string name="equipment_pull_up_bar">Турник</string>
+    <string name="equipment_resistance_bands">Резинки</string>
+    <string name="equipment_bench">Скамья</string>
+    <string name="equipment_machines">Тренажеры</string>
+    <string name="equipment_cardio_machines">Кардио-тренажеры</string>
+    <string name="equipment_none_selected">Оборудование не выбрано</string>
+
+    <!-- Card 7: Schedule -->
+    <string name="schedule_title">Как часто вы можете тренироваться?</string>
+    <string name="schedule_subtitle">Будьте реалистичны с доступным временем</string>
+    <string name="schedule_days_label">Дней в неделю</string>
+    <string name="schedule_days_2_3">2-3 дня</string>
+    <string name="schedule_days_4_5">4-5 дней</string>
+    <string name="schedule_days_6_7">6-7 дней</string>
+    <string name="schedule_duration_label">Длительность тренировки</string>
+    <string name="schedule_duration_short">15-30 минут</string>
+    <string name="schedule_duration_medium">30-45 минут</string>
+    <string name="schedule_duration_long">45-60+ минут</string>
+
+    <!-- Card 8: Limitations -->
+    <string name="limitations_title">Есть ли проблемы со здоровьем?</string>
+    <string name="limitations_subtitle">Мы адаптируем упражнения для безопасности</string>
+    <string name="limitation_none">Нет ограничений</string>
+    <string name="limitation_back_issues">Проблемы со спиной</string>
+    <string name="limitation_knee_issues">Проблемы с коленями</string>
+    <string name="limitation_shoulder_issues">Проблемы с плечами</string>
+    <string name="limitation_cardiovascular">Сердечно-сосудистые</string>
+    <string name="limitation_pregnancy">Беременность</string>
+    <string name="limitation_other">Другое</string>
+    <string name="limitation_other_hint">Опишите вашу проблему</string>
+    <string name="limitation_other_required">Пожалуйста, опишите проблему со здоровьем</string>
+
+    <!-- Card 9: Basic Skills -->
+    <string name="basic_skills_title">Можете ли вы выполнить эти упражнения?</string>
+    <string name="basic_skills_subtitle">Честные ответы помогут начать с правильного уровня</string>
+    <string name="basic_skills_squats">Могу делать приседания (правильная техника)</string>
+    <string name="basic_skills_pushups">Могу делать отжимания</string>
+    <string name="basic_skills_plank">Могу держать планку (30+ секунд)</string>
+
+    <!-- Card 10: Notifications -->
+    <string name="notifications_title">Когда вам напоминать?</string>
+    <string name="notifications_subtitle">Мы отправим мягкие напоминания для мотивации</string>
+    <string name="notification_time_morning">Утром (6-10)</string>
+    <string name="notification_time_morning_desc">Начните день с энергии</string>
+    <string name="notification_time_afternoon">Днем (12-16)</string>
+    <string name="notification_time_afternoon_desc">Заряд энергии в середине дня</string>
+    <string name="notification_time_evening">Вечером (18-21)</string>
+    <string name="notification_time_evening_desc">Тренировка после работы</string>
+    <string name="notification_time_anytime">Когда угодно</string>
+    <string name="notification_time_anytime_desc">Гибкий график</string>
+    <string name="notification_time_none">Без уведомлений</string>
+    <string name="notification_time_none_desc">Я сам буду помнить</string>
+    <string name="finish_button">Завершить настройку</string>
+
+    <!-- Errors -->
+    <string name="error_save_failed">Не удалось сохранить данные. Попробуйте еще раз.</string>
+    <string name="error_generic">Что-то пошло не так. Попробуйте еще раз.</string>
+</resources>

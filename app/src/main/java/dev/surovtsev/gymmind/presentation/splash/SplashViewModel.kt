@@ -46,17 +46,22 @@ class SplashViewModel @Inject constructor(
             val isLoggedIn = userPreferences.isLoggedIn.first()
             val hasCompletedOnboarding = userPreferences.hasCompletedOnboarding.first()
 
+            Log.d("SplashViewModel", "checkAuthState: isLoggedIn=$isLoggedIn, hasCompletedOnboarding=$hasCompletedOnboarding")
+
             when {
                 !isLoggedIn -> {
                     // Показываем кнопку логина
+                    Log.d("SplashViewModel", "Showing login button")
                     _uiState.value = SplashUiState.NotAuthenticated
                 }
                 !hasCompletedOnboarding -> {
                     // Переход на onboarding
+                    Log.d("SplashViewModel", "Navigating to onboarding")
                     _navigationEvent.value = SplashNavigationEvent.NavigateToOnboarding
                 }
                 else -> {
                     // Переход на home
+                    Log.d("SplashViewModel", "Navigating to home")
                     _navigationEvent.value = SplashNavigationEvent.NavigateToHome
                 }
             }

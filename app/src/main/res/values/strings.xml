@@ -1,3 +1,136 @@
 <resources>
     <string name="app_name">gymmind</string>
+
+    <!-- Common -->
+    <string name="continue_button">Continue</string>
+    <string name="back">Back</string>
+    <string name="skip">Skip</string>
+    <string name="onboarding_title">Profile Setup</string>
+
+    <!-- Card 1: Basic Info -->
+    <string name="basic_info_title">Let\'s get to know you</string>
+    <string name="basic_info_subtitle">This helps us create a personalized training program</string>
+    <string name="gender_label">Gender</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="gender_other">Other</string>
+    <string name="gender_prefer_not_to_say">Prefer not to say</string>
+    <string name="age_label">Age</string>
+    <string name="age_hint">Enter your age</string>
+    <string name="height_label">Height (cm)</string>
+    <string name="height_hint">Enter your height</string>
+    <string name="weight_label">Current Weight (kg)</string>
+    <string name="weight_hint">Enter your weight</string>
+    <string name="validation_age_required">Please enter your age</string>
+    <string name="validation_age_invalid">Age must be between 13 and 120</string>
+    <string name="validation_height_required">Please enter your height</string>
+    <string name="validation_height_invalid">Height must be between 100 and 250 cm</string>
+    <string name="validation_weight_required">Please enter your weight</string>
+    <string name="validation_weight_invalid">Weight must be between 30 and 300 kg</string>
+
+    <!-- Card 2: Goal -->
+    <string name="goal_title">What\'s your main goal?</string>
+    <string name="goal_subtitle">Choose what you want to achieve</string>
+    <string name="goal_lose_weight">Lose Weight</string>
+    <string name="goal_lose_weight_desc">Reduce body fat percentage</string>
+    <string name="goal_gain_muscle">Gain Muscle</string>
+    <string name="goal_gain_muscle_desc">Increase strength and muscle mass</string>
+    <string name="goal_improve_flexibility">Improve Flexibility</string>
+    <string name="goal_improve_flexibility_desc">Stretching and mobility</string>
+    <string name="goal_improve_endurance">Improve Endurance</string>
+    <string name="goal_improve_endurance_desc">Build cardio fitness</string>
+    <string name="goal_maintain_fitness">Maintain Fitness</string>
+    <string name="goal_maintain_fitness_desc">Stay in good shape</string>
+
+    <!-- Card 3: Target Weight -->
+    <string name="target_weight_title">What\'s your target weight?</string>
+    <string name="target_weight_subtitle">Set a realistic goal for yourself</string>
+    <string name="target_weight_label">Target Weight (kg)</string>
+    <string name="target_weight_current">Current: %.1f kg</string>
+    <string name="target_weight_difference">Difference: %+.1f kg</string>
+
+    <!-- Card 4: Experience -->
+    <string name="experience_title">What\'s your fitness level?</string>
+    <string name="experience_subtitle">This helps us adjust difficulty</string>
+    <string name="experience_beginner">Beginner</string>
+    <string name="experience_beginner_desc">Just starting out</string>
+    <string name="experience_intermediate">Intermediate</string>
+    <string name="experience_intermediate_desc">Some training experience</string>
+    <string name="experience_advanced">Advanced</string>
+    <string name="experience_advanced_desc">Experienced athlete</string>
+
+    <!-- Card 5: Location -->
+    <string name="location_title">Where will you train?</string>
+    <string name="location_subtitle">This affects available exercises</string>
+    <string name="location_home_no_equipment">Home (no equipment)</string>
+    <string name="location_home_no_equipment_desc">Bodyweight exercises only</string>
+    <string name="location_home_with_equipment">Home (with equipment)</string>
+    <string name="location_home_with_equipment_desc">Dumbbells, bands, etc.</string>
+    <string name="location_gym">Gym</string>
+    <string name="location_gym_desc">Full equipment access</string>
+    <string name="location_outdoor">Outdoor</string>
+    <string name="location_outdoor_desc">Parks, playgrounds</string>
+
+    <!-- Card 6: Equipment -->
+    <string name="equipment_title">What equipment do you have?</string>
+    <string name="equipment_subtitle">Select all that apply</string>
+    <string name="equipment_dumbbells">Dumbbells</string>
+    <string name="equipment_barbell">Barbell</string>
+    <string name="equipment_pull_up_bar">Pull-up Bar</string>
+    <string name="equipment_resistance_bands">Resistance Bands</string>
+    <string name="equipment_bench">Bench</string>
+    <string name="equipment_machines">Machines</string>
+    <string name="equipment_cardio_machines">Cardio Machines</string>
+    <string name="equipment_none_selected">No equipment selected</string>
+
+    <!-- Card 7: Schedule -->
+    <string name="schedule_title">How often can you train?</string>
+    <string name="schedule_subtitle">Be realistic with your availability</string>
+    <string name="schedule_days_label">Days per week</string>
+    <string name="schedule_days_2_3">2-3 days</string>
+    <string name="schedule_days_4_5">4-5 days</string>
+    <string name="schedule_days_6_7">6-7 days</string>
+    <string name="schedule_duration_label">Workout duration</string>
+    <string name="schedule_duration_short">15-30 minutes</string>
+    <string name="schedule_duration_medium">30-45 minutes</string>
+    <string name="schedule_duration_long">45-60+ minutes</string>
+
+    <!-- Card 8: Limitations -->
+    <string name="limitations_title">Any health concerns?</string>
+    <string name="limitations_subtitle">We\'ll adapt exercises to keep you safe</string>
+    <string name="limitation_none">No limitations</string>
+    <string name="limitation_back_issues">Back Issues</string>
+    <string name="limitation_knee_issues">Knee Issues</string>
+    <string name="limitation_shoulder_issues">Shoulder Issues</string>
+    <string name="limitation_cardiovascular">Cardiovascular Concerns</string>
+    <string name="limitation_pregnancy">Pregnancy</string>
+    <string name="limitation_other">Other</string>
+    <string name="limitation_other_hint">Please describe your concern</string>
+    <string name="limitation_other_required">Please describe your health concern</string>
+
+    <!-- Card 9: Basic Skills -->
+    <string name="basic_skills_title">Can you perform these exercises?</string>
+    <string name="basic_skills_subtitle">Honest answers help us start at the right level</string>
+    <string name="basic_skills_squats">I can do squats (proper form)</string>
+    <string name="basic_skills_pushups">I can do push-ups</string>
+    <string name="basic_skills_plank">I can hold a plank (30+ seconds)</string>
+
+    <!-- Card 10: Notifications -->
+    <string name="notifications_title">When should we remind you?</string>
+    <string name="notifications_subtitle">We\'ll send gentle reminders to keep you on track</string>
+    <string name="notification_time_morning">Morning (6-10 AM)</string>
+    <string name="notification_time_morning_desc">Start your day with energy</string>
+    <string name="notification_time_afternoon">Afternoon (12-4 PM)</string>
+    <string name="notification_time_afternoon_desc">Midday energy boost</string>
+    <string name="notification_time_evening">Evening (6-9 PM)</string>
+    <string name="notification_time_evening_desc">After work workout</string>
+    <string name="notification_time_anytime">Anytime</string>
+    <string name="notification_time_anytime_desc">Flexible schedule</string>
+    <string name="notification_time_none">No notifications</string>
+    <string name="notification_time_none_desc">I\'ll remember on my own</string>
+    <string name="finish_button">Complete Setup</string>
+
+    <!-- Errors -->
+    <string name="error_save_failed">Failed to save data. Please try again.</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
 </resources>
