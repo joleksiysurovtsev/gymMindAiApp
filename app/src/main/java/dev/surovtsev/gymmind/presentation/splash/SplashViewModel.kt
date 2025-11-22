@@ -43,15 +43,21 @@ class SplashViewModel @Inject constructor(
             // Показываем splash минимум 2 секунды для красивой анимации
             delay(2000)
 
+            val isGuestMode = userPreferences.isGuestMode.first()
             val isLoggedIn = userPreferences.isLoggedIn.first()
             val hasCompletedOnboarding = userPreferences.hasCompletedOnboarding.first()
 
-            Log.d("SplashViewModel", "checkAuthState: isLoggedIn=$isLoggedIn, hasCompletedOnboarding=$hasCompletedOnboarding")
+            Log.d("SplashViewModel", "checkAuthState: isGuestMode=$isGuestMode, isLoggedIn=$isLoggedIn, hasCompletedOnboarding=$hasCompletedOnboarding")
 
             when {
+                isGuestMode -> {
+                    // Гость - переход сразу на home без онбординга
+                    Log.d("SplashViewModel", "Guest mode - navigating to home")
+                    _navigationEvent.value = SplashNavigationEvent.NavigateToHome
+                }
                 !isLoggedIn -> {
-                    // Показываем кнопку логина
-                    Log.d("SplashViewModel", "Showing login button")
+                    // Показываем кнопки логина и guest
+                    Log.d("SplashViewModel", "Showing login/guest options")
                     _uiState.value = SplashUiState.NotAuthenticated
                 }
                 !hasCompletedOnboarding -> {
@@ -65,6 +71,14 @@ class SplashViewModel @Inject constructor(
                     _navigationEvent.value = SplashNavigationEvent.NavigateToHome
                 }
             }
+        }
+    }
+
+    fun continueAsGuest() {
+        viewModelScope.launch {
+            Log.d("SplashViewModel", "User selected guest mode")
+            userPreferences.setGuestMode(true)
+            _navigationEvent.value = SplashNavigationEvent.NavigateToHome
         }
     }
 
@@ -105,6 +119,9 @@ class SplashViewModel @Inject constructor(
                     authRepository.signInWithGoogle(idToken)
                         .onSuccess { profile ->
                             Log.d("SplashViewModel", "Sign in successful, user: ${profile.email}, onboarding: ${profile.hasCompletedOnboarding}")
+
+                            // Выход из guest mode при логине
+                            userPreferences.setGuestMode(false)
 
                             // Навигация в зависимости от onboarding статуса
                             if (profile.hasCompletedOnboarding) {

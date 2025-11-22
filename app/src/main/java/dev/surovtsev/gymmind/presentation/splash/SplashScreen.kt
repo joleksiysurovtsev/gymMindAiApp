@@ -1,12 +1,15 @@
 package dev.surovtsev.gymmind.presentation.splash
 
 import androidx.compose.animation.core.*
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -59,14 +62,16 @@ fun SplashScreen(
 
     SplashContent(
         uiState = uiState.value,
-        onSignInClick = { viewModel.signInWithGoogle(context) }
+        onSignInClick = { viewModel.signInWithGoogle(context) },
+        onGuestClick = { viewModel.continueAsGuest() }
     )
 }
 
 @Composable
 fun SplashContent(
     uiState: SplashUiState = SplashUiState.Loading,
-    onSignInClick: () -> Unit = {}
+    onSignInClick: () -> Unit = {},
+    onGuestClick: () -> Unit = {}
 ) {
     // Анимации для логотипа
     val infiniteTransition = rememberInfiniteTransition(label = "splash")
@@ -216,13 +221,29 @@ fun SplashContent(
                     is SplashUiState.NotAuthenticated -> {
                         Column(
                             horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                            verticalArrangement = Arrangement.spacedBy(12.dp)
                         ) {
                             GymMindButton(
                                 text = "Sign in with Google",
                                 onClick = onSignInClick,
                                 modifier = Modifier.fillMaxWidth()
                             )
+
+                            OutlinedButton(
+                                onClick = onGuestClick,
+                                modifier = Modifier.fillMaxWidth(),
+                                shape = MaterialTheme.shapes.medium,
+                                border = BorderStroke(1.dp, Primary),
+                                colors = ButtonDefaults.outlinedButtonColors(
+                                    contentColor = Primary
+                                )
+                            ) {
+                                Text(
+                                    text = "Continue as Guest",
+                                    style = MaterialTheme.typography.labelLarge,
+                                    modifier = Modifier.padding(vertical = 8.dp)
+                                )
+                            }
                         }
                     }
                     is SplashUiState.Authenticating -> {

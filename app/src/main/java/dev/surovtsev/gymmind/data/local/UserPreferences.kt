@@ -19,11 +19,13 @@ class UserPreferences @Inject constructor(
         private val USER_ID = stringPreferencesKey("user_id")
         private val HAS_COMPLETED_ONBOARDING = booleanPreferencesKey("has_completed_onboarding")
         private val ONBOARDING_PROGRESS = stringPreferencesKey("onboarding_progress")
+        private val IS_GUEST_MODE = booleanPreferencesKey("is_guest_mode")
     }
 
     val isLoggedIn: Flow<Boolean> = dataStore.data.map { it[IS_LOGGED_IN] ?: false }
     val userId: Flow<String?> = dataStore.data.map { it[USER_ID] }
     val hasCompletedOnboarding: Flow<Boolean> = dataStore.data.map { it[HAS_COMPLETED_ONBOARDING] ?: false }
+    val isGuestMode: Flow<Boolean> = dataStore.data.map { it[IS_GUEST_MODE] ?: false }
 
     suspend fun setLoggedIn(isLoggedIn: Boolean, userId: String? = null) {
         dataStore.edit { preferences ->
@@ -53,6 +55,17 @@ class UserPreferences @Inject constructor(
     suspend fun clearOnboardingProgress() {
         dataStore.edit { preferences ->
             preferences.remove(ONBOARDING_PROGRESS)
+        }
+    }
+
+    suspend fun setGuestMode(isGuest: Boolean) {
+        dataStore.edit { preferences ->
+            preferences[IS_GUEST_MODE] = isGuest
+            if (isGuest) {
+                // When entering guest mode, ensure user is not logged in
+                preferences[IS_LOGGED_IN] = false
+                preferences[HAS_COMPLETED_ONBOARDING] = false
+            }
         }
     }
 
