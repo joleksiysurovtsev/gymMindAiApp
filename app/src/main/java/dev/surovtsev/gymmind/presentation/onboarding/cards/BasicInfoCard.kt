@@ -10,7 +10,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import dev.surovtsev.gymmind.R
-import dev.surovtsev.gymmind.domain.model.Gender
+import dev.surovtsev.gymmind.domain.model.enums.Gender
 import dev.surovtsev.gymmind.presentation.components.GymMindButton
 import dev.surovtsev.gymmind.presentation.onboarding.components.OnboardingCardContainer
 import dev.surovtsev.gymmind.presentation.onboarding.components.OnboardingTextField

@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import dev.surovtsev.gymmind.R
-import dev.surovtsev.gymmind.domain.model.Equipment
+import dev.surovtsev.gymmind.domain.model.enums.Equipment
 import dev.surovtsev.gymmind.presentation.components.GymMindButton
 import dev.surovtsev.gymmind.presentation.onboarding.components.OnboardingCardContainer
 import dev.surovtsev.gymmind.presentation.onboarding.components.SelectableChip
@@ -78,12 +78,12 @@ fun EquipmentCard(
 
                 SelectableChip(
                     text = stringResource(R.string.equipment_resistance_bands),
-                    isSelected = Equipment.RESISTANCE_BANDS in selectedEquipment,
+                    isSelected = Equipment.RESISTANCE_BAND in selectedEquipment,
                     onClick = {
-                        selectedEquipment = if (Equipment.RESISTANCE_BANDS in selectedEquipment) {
-                            selectedEquipment.filter { it != Equipment.RESISTANCE_BANDS }
+                        selectedEquipment = if (Equipment.RESISTANCE_BAND in selectedEquipment) {
+                            selectedEquipment.filter { it != Equipment.RESISTANCE_BAND }
                         } else {
-                            selectedEquipment + Equipment.RESISTANCE_BANDS
+                            selectedEquipment + Equipment.RESISTANCE_BAND
                         }
                     }
                 )

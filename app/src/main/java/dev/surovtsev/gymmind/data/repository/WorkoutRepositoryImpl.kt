@@ -1,6 +1,10 @@
 package dev.surovtsev.gymmind.data.repository
 
-import dev.surovtsev.gymmind.domain.model.*
+import dev.surovtsev.gymmind.domain.model.Exercise
+import dev.surovtsev.gymmind.domain.model.WorkoutCategory
+import dev.surovtsev.gymmind.domain.model.WorkoutPlan
+import dev.surovtsev.gymmind.domain.model.enums.MuscleGroup
+import dev.surovtsev.gymmind.domain.model.enums.ProgramDifficulty
 import dev.surovtsev.gymmind.domain.repository.WorkoutRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
@@ -18,7 +22,7 @@ class WorkoutRepositoryImpl @Inject constructor() : WorkoutRepository {
             name = "Full Body Beginner",
             description = "Perfect for those just starting out. This workout targets all major muscle groups with simple, effective exercises.",
             category = WorkoutCategory.FREE_BASIC,
-            difficulty = ExperienceLevel.BEGINNER,
+            difficulty = ProgramDifficulty.BEGINNER,
             durationMinutes = 25,
             caloriesBurnEstimate = 180,
             tags = listOf("Full Body", "Beginner", "No Equipment"),
@@ -31,7 +35,7 @@ class WorkoutRepositoryImpl @Inject constructor() : WorkoutRepository {
                     reps = "10-12",
                     restSeconds = 60,
                     equipment = emptyList(),
-                    muscleGroups = listOf("Legs", "Glutes"),
+                    muscleGroups = listOf(MuscleGroup.QUADRICEPS, MuscleGroup.GLUTES),
                     instructions = listOf(
                         "Stand with feet shoulder-width apart",
                         "Lower your body by bending knees",
@@ -47,7 +51,7 @@ class WorkoutRepositoryImpl @Inject constructor() : WorkoutRepository {
                     reps = "8-10",
                     restSeconds = 60,
                     equipment = emptyList(),
-                    muscleGroups = listOf("Chest", "Shoulders", "Triceps"),
+                    muscleGroups = listOf(MuscleGroup.CHEST, MuscleGroup.SHOULDERS, MuscleGroup.TRICEPS),
                     instructions = listOf(
                         "Start in plank position",
                         "Lower body until chest nearly touches floor",
@@ -63,7 +67,7 @@ class WorkoutRepositoryImpl @Inject constructor() : WorkoutRepository {
                     reps = "20-30s",
                     restSeconds = 45,
                     equipment = emptyList(),
-                    muscleGroups = listOf("Core", "Abs"),
+                    muscleGroups = listOf(MuscleGroup.CORE, MuscleGroup.ABS),
                     instructions = listOf(
                         "Start in forearm plank position",
                         "Keep body in straight line",
@@ -80,7 +84,7 @@ class WorkoutRepositoryImpl @Inject constructor() : WorkoutRepository {
             name = "Cardio Basic",
             description = "Get your heart pumping with this simple cardio routine. No equipment needed, perfect for home workouts.",
             category = WorkoutCategory.FREE_BASIC,
-            difficulty = ExperienceLevel.BEGINNER,
+            difficulty = ProgramDifficulty.BEGINNER,
             durationMinutes = 20,
             caloriesBurnEstimate = 200,
             tags = listOf("Cardio", "Beginner", "Fat Burn"),
@@ -93,7 +97,7 @@ class WorkoutRepositoryImpl @Inject constructor() : WorkoutRepository {
                     reps = "30s",
                     restSeconds = 30,
                     equipment = emptyList(),
-                    muscleGroups = listOf("Full Body", "Cardio"),
+                    muscleGroups = listOf(MuscleGroup.FULL_BODY),
                     instructions = listOf(
                         "Start with feet together, arms at sides",
                         "Jump while spreading legs and raising arms",
@@ -109,7 +113,7 @@ class WorkoutRepositoryImpl @Inject constructor() : WorkoutRepository {
                     reps = "30s",
                     restSeconds = 30,
                     equipment = emptyList(),
-                    muscleGroups = listOf("Legs", "Cardio"),
+                    muscleGroups = listOf(MuscleGroup.QUADRICEPS),
                     instructions = listOf(
                         "Run in place",
                         "Lift knees high toward chest",
@@ -125,7 +129,7 @@ class WorkoutRepositoryImpl @Inject constructor() : WorkoutRepository {
                     reps = "20s",
                     restSeconds = 40,
                     equipment = emptyList(),
-                    muscleGroups = listOf("Core", "Cardio", "Full Body"),
+                    muscleGroups = listOf(MuscleGroup.CORE, MuscleGroup.FULL_BODY),
                     instructions = listOf(
                         "Start in push-up position",
                         "Bring one knee toward chest",
@@ -142,7 +146,7 @@ class WorkoutRepositoryImpl @Inject constructor() : WorkoutRepository {
             name = "Upper Body Strength",
             description = "Build muscle in your chest, shoulders, and arms with this advanced routine.",
             category = WorkoutCategory.PREMIUM,
-            difficulty = ExperienceLevel.INTERMEDIATE,
+            difficulty = ProgramDifficulty.INTERMEDIATE,
             durationMinutes = 45,
             caloriesBurnEstimate = 300,
             tags = listOf("Strength", "Upper Body", "Muscle Building"),
@@ -154,7 +158,7 @@ class WorkoutRepositoryImpl @Inject constructor() : WorkoutRepository {
             name = "HIIT Advanced",
             description = "High-intensity interval training for maximum fat burn and conditioning.",
             category = WorkoutCategory.PREMIUM,
-            difficulty = ExperienceLevel.ADVANCED,
+            difficulty = ProgramDifficulty.ADVANCED,
             durationMinutes = 30,
             caloriesBurnEstimate = 400,
             tags = listOf("HIIT", "Advanced", "Fat Burn"),
@@ -166,7 +170,7 @@ class WorkoutRepositoryImpl @Inject constructor() : WorkoutRepository {
             name = "Leg Day Complete",
             description = "Comprehensive lower body workout targeting quads, hamstrings, and glutes.",
             category = WorkoutCategory.PREMIUM,
-            difficulty = ExperienceLevel.INTERMEDIATE,
+            difficulty = ProgramDifficulty.INTERMEDIATE,
             durationMinutes = 50,
             caloriesBurnEstimate = 350,
             tags = listOf("Legs", "Strength", "Muscle Building"),

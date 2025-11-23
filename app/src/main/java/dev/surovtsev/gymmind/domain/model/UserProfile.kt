@@ -1,5 +1,12 @@
 package dev.surovtsev.gymmind.domain.model
 
+import dev.surovtsev.gymmind.domain.model.enums.Equipment
+import dev.surovtsev.gymmind.domain.model.enums.Gender
+
+/**
+ * User Profile for onboarding and basic user data
+ * Uses simplified enums for onboarding flow
+ */
 data class UserProfile(
     // Authentication & Basic Info
     val id: String = "",

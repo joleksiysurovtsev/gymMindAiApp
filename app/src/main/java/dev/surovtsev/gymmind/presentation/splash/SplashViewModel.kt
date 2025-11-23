@@ -89,7 +89,6 @@ class SplashViewModel @Inject constructor(
             try {
                 val credentialManager = CredentialManager.create(context)
 
-                // TODO: Заменить на ваш Web Client ID из Firebase Console
                 // Authentication -> Sign-in method -> Google -> Web SDK configuration
                 val googleIdOption = GetGoogleIdOption.Builder()
                     .setFilterByAuthorizedAccounts(false)

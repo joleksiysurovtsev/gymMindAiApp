@@ -106,12 +106,6 @@ This project follows Clean Architecture principles with three layers:
 - User data stored under `users/{userId}` document
 - UserProfile contains all onboarding data
 
-### Working with Onboarding
-- UserProfile model contains all onboarding fields (gender, age, goal, equipment, etc.)
-- Branching logic in domain use cases, not in UI
-- Progress calculation dynamically determines total steps based on answers
-- See `onboarding.md` for detailed implementation spec (in Russian)
-
 ### MultiDex
 - Enabled due to large dependency count (Firebase, MediaPipe, CameraX, etc.)
 - Configured in `GymMindApplication.kt`

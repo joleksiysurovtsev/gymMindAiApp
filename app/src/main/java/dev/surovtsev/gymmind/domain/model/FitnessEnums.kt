@@ -1,14 +1,9 @@
 package dev.surovtsev.gymmind.domain.model
 
 /**
- * Gender options for user profile
+ * Onboarding-specific enums
+ * These are simplified versions used during user onboarding flow
  */
-enum class Gender {
-    MALE,
-    FEMALE,
-    OTHER,
-    PREFER_NOT_TO_SAY
-}
 
 /**
  * Main fitness goals that determine training program recommendations
@@ -40,20 +35,6 @@ enum class WorkoutLocation {
     HOME_WITH_EQUIPMENT,    // Show equipment selection
     GYM,                    // Show equipment selection
     OUTDOOR                 // Skip equipment selection
-}
-
-/**
- * Available equipment for training
- * Used for workout program personalization
- */
-enum class Equipment {
-    DUMBBELLS,
-    BARBELL,
-    PULL_UP_BAR,
-    RESISTANCE_BANDS,
-    BENCH,
-    MACHINES,
-    CARDIO_MACHINES
 }
 
 /**
