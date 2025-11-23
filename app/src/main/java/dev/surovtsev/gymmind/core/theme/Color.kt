@@ -29,3 +29,8 @@ val TextPrimary = Color(0xFFFFFFFF)
 val TextSecondary = Color(0xFF9CA3AF)
 val TextTertiary = Color(0xFF6B7280)
 val TextDisabled = Color(0xFF4B5563)
+
+// Additional colors
+val Background = BgPrimary
+val Surface = BgSurface
+val PrimaryTransparent = Primary.copy(alpha = 0.1f)

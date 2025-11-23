@@ -59,8 +59,8 @@ fun SplashScreen(
                     popUpTo(Routes.SPLASH) { inclusive = true }
                 }
             }
-            is SplashNavigationEvent.NavigateToHome -> {
-                navController.navigate(Routes.HOME) {
+            is SplashNavigationEvent.NavigateToMain -> {
+                navController.navigate(Routes.MAIN) {
                     popUpTo(Routes.SPLASH) { inclusive = true }
                 }
             }

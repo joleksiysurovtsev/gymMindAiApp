@@ -6,9 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import dev.surovtsev.gymmind.presentation.home.HomeScreen
+import dev.surovtsev.gymmind.presentation.main.MainScreen
 import dev.surovtsev.gymmind.presentation.onboarding.OnboardingScreen
-import dev.surovtsev.gymmind.presentation.profile.ProfileScreen
 import dev.surovtsev.gymmind.presentation.splash.SplashScreen
 
 @Composable
@@ -29,12 +28,8 @@ fun GymMindNavHost(
             OnboardingScreen(navController = navController)
         }
 
-        composable(Routes.HOME) {
-            HomeScreen(navController = navController)
-        }
-
-        composable(Routes.PROFILE) {
-            ProfileScreen(navController = navController)
+        composable(Routes.MAIN) {
+            MainScreen(navController = rememberNavController())
         }
 
         // Остальные экраны будут добавлены позже

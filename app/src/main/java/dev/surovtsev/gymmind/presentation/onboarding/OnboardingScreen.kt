@@ -38,8 +38,8 @@ fun OnboardingScreen(
     // Handle navigation events
     LaunchedEffect(navigationEvent) {
         when (navigationEvent) {
-            is OnboardingNavigationEvent.NavigateToHome -> {
-                navController.navigate(Routes.HOME) {
+            is OnboardingNavigationEvent.NavigateToMain -> {
+                navController.navigate(Routes.MAIN) {
                     popUpTo(Routes.ONBOARDING) { inclusive = true }
                 }
                 viewModel.clearNavigationEvent()

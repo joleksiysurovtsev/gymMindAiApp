@@ -195,7 +195,7 @@ class OnboardingViewModel @Inject constructor(
             saveOnboardingDataUseCase.completeOnboarding(_userProfile.value)
                 .onSuccess {
                     _uiState.value = OnboardingUiState.Completed
-                    _navigationEvent.value = OnboardingNavigationEvent.NavigateToHome
+                    _navigationEvent.value = OnboardingNavigationEvent.NavigateToMain
                 }
                 .onFailure { error ->
                     _uiState.value = OnboardingUiState.Error(
@@ -222,5 +222,5 @@ sealed class OnboardingUiState {
 }
 
 sealed class OnboardingNavigationEvent {
-    object NavigateToHome : OnboardingNavigationEvent()
+    object NavigateToMain : OnboardingNavigationEvent()
 }

@@ -51,9 +51,9 @@ class SplashViewModel @Inject constructor(
 
             when {
                 isGuestMode -> {
-                    // Гость - переход сразу на home без онбординга
-                    Log.d("SplashViewModel", "Guest mode - navigating to home")
-                    _navigationEvent.value = SplashNavigationEvent.NavigateToHome
+                    // Гость - переход сразу на main без онбординга
+                    Log.d("SplashViewModel", "Guest mode - navigating to main")
+                    _navigationEvent.value = SplashNavigationEvent.NavigateToMain
                 }
                 !isLoggedIn -> {
                     // Показываем кнопки логина и guest
@@ -66,9 +66,9 @@ class SplashViewModel @Inject constructor(
                     _navigationEvent.value = SplashNavigationEvent.NavigateToOnboarding
                 }
                 else -> {
-                    // Переход на home
-                    Log.d("SplashViewModel", "Navigating to home")
-                    _navigationEvent.value = SplashNavigationEvent.NavigateToHome
+                    // Переход на main
+                    Log.d("SplashViewModel", "Navigating to main")
+                    _navigationEvent.value = SplashNavigationEvent.NavigateToMain
                 }
             }
         }
@@ -78,7 +78,7 @@ class SplashViewModel @Inject constructor(
         viewModelScope.launch {
             Log.d("SplashViewModel", "User selected guest mode")
             userPreferences.setGuestMode(true)
-            _navigationEvent.value = SplashNavigationEvent.NavigateToHome
+            _navigationEvent.value = SplashNavigationEvent.NavigateToMain
         }
     }
 
@@ -124,7 +124,7 @@ class SplashViewModel @Inject constructor(
 
                             // Навигация в зависимости от onboarding статуса
                             if (profile.hasCompletedOnboarding) {
-                                _navigationEvent.value = SplashNavigationEvent.NavigateToHome
+                                _navigationEvent.value = SplashNavigationEvent.NavigateToMain
                             } else {
                                 _navigationEvent.value = SplashNavigationEvent.NavigateToOnboarding
                             }
@@ -182,5 +182,5 @@ sealed class SplashUiState {
 
 sealed class SplashNavigationEvent {
     object NavigateToOnboarding : SplashNavigationEvent()
-    object NavigateToHome : SplashNavigationEvent()
+    object NavigateToMain : SplashNavigationEvent()
 }
